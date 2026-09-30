@@ -1,0 +1,78 @@
+/* Firefox 157 / Nova
+ * Change Tabs and groups to singlecolored blocks
+ */
+
+/* ---------- Farben ---------- */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --uc-tab-bg: #051020;
+        --uc-tab-selected-bg: #262538;
+        --uc-tab-text: #ffffff;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --uc-tab-bg: #e2e2e8;
+        --uc-tab-selected-bg: #efeff2;
+        --uc-tab-text: #000000;
+    }
+}
+
+
+/* ---------- Tabs ---------- */
+
+.tab-background {
+    margin-block: 3px !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+    background: var(--uc-tab-bg) !important;
+    opacity: 1 !important;
+}
+
+/* Nova-Dekorationen entfernen */
+.tab-background::before,
+.tab-background::after {
+    display: none !important;
+}
+
+/* Aktiver Tab: leicht heller, aber weiterhin 100 % deckend */
+.tabbrowser-tab[selected] .tab-background,
+.tab-background[selected] {
+    background: var(--uc-tab-selected-bg) !important;
+    opacity: 1 !important;
+}
+
+/* Firefox 157/Nova verwendet diese Variablen ebenfalls fuer den aktiven Tab. */
+.tabbrowser-tab[selected] {
+    --tab-selected-bgcolor: var(--uc-tab-selected-bg) !important;
+    --lwt-selected-tab-background-color: var(--uc-tab-selected-bg) !important;
+}
+
+.tab-label {
+    color: var(--uc-tab-text) !important;
+}
+
+.tabbrowser-tab[selected] .tab-label {
+    font-weight: bold !important;
+}
+
+
+/* ---------- Tab-Gruppen ---------- */
+
+.tab-group-label-container,
+.tab-group-label,
+.tab-group-label::before,
+.tab-group-label::after {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background-image: none !important;
+}
+
+.tab-group-label {
+    padding-inline: 6px !important;
+    outline: none !important;
+}
