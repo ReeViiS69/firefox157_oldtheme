@@ -46,6 +46,11 @@
     opacity: 1 !important;
 }
 
+/* Zusaetzlich mit Strg/Shift markierte Tabs wie den aktiven Tab aufhellen. */
+.tabbrowser-tab[multiselected]:not([selected]) .tab-background {
+    background: var(--uc-tab-selected-bg) !important;
+}
+
 /* Firefox 157/Nova verwendet diese Variablen ebenfalls fuer den aktiven Tab. */
 .tabbrowser-tab[selected] {
     --tab-selected-bgcolor: var(--uc-tab-selected-bg) !important;
