@@ -1,14 +1,12 @@
-/* Firefox Nova – Test 7: ohne Tab-Schattenregel, mit Outline-Reset */
+/* Firefox Nova – */
 :root {
   --uc-bg: #051020;
   --uc-active: #262538;
-  --uc-text: #fff;
 }
 @media (prefers-color-scheme: light) {
   :root {
     --uc-bg: #e2e2e8;
     --uc-active: #efeff2;
-    --uc-text: #000;
   }
 }
 
@@ -21,10 +19,8 @@
 .tabbrowser-tab:is([selected], [multiselected]) .tab-background {
   background: var(--uc-active) !important;
 }
-.tab-label { color: var(--uc-text) !important; }
 .tabbrowser-tab[selected] .tab-label { font-weight: bold !important; }
 
 .tab-group-label-container, .tab-group-label {
   border-radius: 0 !important;
 }
-.tab-group-label { padding-inline: 6px !important; }
